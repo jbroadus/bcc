@@ -19,7 +19,7 @@ if (LUAJIT_LIBRARIES AND LUAJIT)
 		DEPENDS bcc.lua
 	)
 
-	include_directories(${LUAJIT_INCLUDE_DIR})
+	include_directories(BEFORE ${LUAJIT_INCLUDE_DIR})
 	add_executable(bcc-lua src/main.c bcc.o)
 	set_target_properties(bcc-lua PROPERTIES LINKER_LANGUAGE C)
 	target_link_libraries(bcc-lua ${LUAJIT_LIBRARIES})
